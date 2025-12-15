@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package imageclassifier;
+
+// Service exposed by Microservice B
+service ImageClassifier {
+  rpc UploadImage(ImageRequest) returns (ImageResponse);
+}
+
+message ImageRequest {
+  bytes imageData = 1;
+}
+
+message ImageResponse {
+  string label = 1;
+  double confidence = 2;
+}

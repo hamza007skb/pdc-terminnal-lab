@@ -1,0 +1,21 @@
+{
+  "name": "s2s-grpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "direct-grpc-client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.14.3",
+    "@grpc/proto-loader": "^0.8.0",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "form-data": "^4.0.5",
+    "multer": "^2.0.2",
+    "node-fetch": "^3.3.2"
+  }
+}

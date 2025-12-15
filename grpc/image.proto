@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package imageclassifier;
+
+// gRPC service
+service ImageClassifier {
+  rpc UploadImage (ImageRequest) returns (ImageResponse);
+}
+
+// Request message
+message ImageRequest {
+  bytes imageData = 1; // single image for unary RPC
+}
+
+// Response message
+message ImageResponse {
+  string label = 1;
+  double confidence = 2;
+}
