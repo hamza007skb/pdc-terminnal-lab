@@ -17,23 +17,27 @@ function randomPrediction() {
   return { label, confidence };
 }
 
+
 // ---------- ROUTE ----------
 app.post("/uploadImage", upload.array("images", 10), (req, res) => {
-  if (!req.files || req.files.length === 0) {
-    return res.status(400).json({ error: "No image uploaded" });
-  }
+  const start = Date.now();
 
-  // Generate random result per image
   const results = req.files.map((file, index) => ({
     image: file.originalname || `image_${index + 1}`,
-    ...randomPrediction(),
+    label: Math.random() > 0.5 ? "cat" : "dog",
+    confidence: +(Math.random() * 0.5 + 0.5).toFixed(2),
   }));
 
-  res.json({
-    count: req.files.length,
-    results,
+  const duration = Date.now() - start;
+
+  console.log({
+    images: req.files.length,
+    serverProcessingTimeMs: duration,
   });
+
+  res.json({ count: req.files.length, results });
 });
+
 
 // ---------- SERVER ----------
 const PORT = 3000;

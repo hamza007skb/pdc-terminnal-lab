@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Upload Test</title>
+</head>
+<body>
+  <input type="file" id="imageInput" multiple />
+  <button onclick="send()">Upload</button>
+
+  <script src="client.js"></script>
+  <script>
+    function send() {
+      const files = document.getElementById("imageInput").files;
+      uploadImages(files);
+    }
+  </script>
+</body>
+</html>
