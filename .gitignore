@@ -1,0 +1,51 @@
+# Node.js / JavaScript / TypeScript common ignores
+
+# dependencies
+# node_modules/
+
+# debug logs
+npm-debug.log*
+/TRPC/node_modules/
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# environment variables
+.env
+.env.local
+.env.*.local
+
+# build output
+dist/
+build/
+out/
+.next/
+*.tsbuildinfo
+
+# caches
+.cache/
+.parcel-cache/
+.pnp/
+.yarn/cache
+
+# test coverage
+coverage/
+
+# editor/IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# serverless / deployment
+.serverless/
+.vercel/
+firebase-debug.log
+
+# temp
+tmp/
+temp/
